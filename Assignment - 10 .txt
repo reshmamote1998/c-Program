@@ -1,0 +1,184 @@
+                 Assignment - 10 
+
+                 Functions in C Language
+1. Write a function to calculate the area of a circle. (TSRS)
+
+   #include<stdio.h>
+int circle(int);
+int main()
+{
+  int r;
+  float A;
+  printf("Enter radius of circle:");
+  scanf("%d",&r);
+  A=circle(r);
+  printf("Area of circle =%f",A);
+  getch ();
+}
+int circle(int r)
+{
+    float area;
+    area=3.14*r*r;
+    return area;
+}
+2. Write a function to calculate simple interest. (TSRS)
+
+   #include<stdio.h>
+int SI(int,int,int);
+int main()
+{
+    float P,R,T;
+    double S;
+    printf("Enter principal,rate of intreast and time:");
+    scanf("%f %f %f",&P,&R,&T);
+    S=SI(P,R,T);
+    printf("Simple intreast=%f",S);
+    return 0;
+}
+int SI(int P,int R,int T)
+{
+    double SI;
+    SI=(P*R*T)/100;
+    return SI;
+}
+3. Write a function to check whether a given number is even or odd. Return 1 if the 
+number is even, otherwise return 0. (TSRS)
+
+    #include<stdio.h>
+int evenodd(int);
+int main()
+{
+    int x,R;
+    printf("Enter a number:");
+    scanf("%d",&x);
+    R=evenodd(x);
+    printf("Return=%d",R);
+    return 0;
+}
+int evenodd(int x)
+{
+    if(x%2==0)
+      return 1;
+    else
+      return 0;
+}
+ 
+4. Write a function to print first N natural numbers (TSRN)
+
+    #include<stdio.h>
+void natnumb(int);
+int main()
+{
+    int N;
+    printf("Enter a number:");
+    scanf("%d",&N);
+    natnumb(N);
+    return 0;
+}
+void natnumb(int N)
+{
+    int i;
+    printf("The first natural numbers are:\n");
+    for(i=1;i<=N;i++)
+    {
+      printf("%d\n",i);
+    }
+      
+}
+
+
+5. Write a function to print first N odd natural numbers. (TSRN)
+
+    #include<stdio.h>
+void oddnau(int);
+int main()
+{
+    int n;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    oddnau(n);
+    return 0;
+}
+void oddnau(int n)
+{
+    int i;
+    printf("The first Odd natural numbers are:\n");
+    for(i=1;i<=n;i++)
+    {
+        printf("%d\n",(i*2)-1);
+    }
+}
+
+
+6. Write a function to calculate the factorial of a number. (TSRS)
+   
+     #include<stdio.h>
+int fact(int);
+int main()
+{
+    int n;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    printf("%d",fact(n));
+    return 0;
+}
+int fact(int n)
+{
+    int i, f=1;
+    for(i=1; i<=n; i++)
+        f=f*i;
+    return f;
+}
+
+
+7. Write a function to calculate the number of combinations one can make from n items 
+and r selected at a time. (TSRS)
+
+   #include<stdio.h>
+int comb(int,int);
+int fact(int);
+int main()
+{
+    int a,b;
+    printf("Enter two  number:");
+    scanf("%d%d",&a,&b);
+    printf("The Combination is %d ",comb(a,b));
+    return 0;
+}
+int fact(int n)
+{
+    int i, f=1;
+    for(i=1; i<=n; i++)
+        f=f*i;
+    return f;
+}
+int comb(int n,int r)
+{
+    return fact(n)/(fact(r)*fact(n-r));
+}
+v8. Write a function to calculate the number of arrangements one can make from n items 
+and r selected at a time. (TSRS)
+
+ #include<stdio.h>
+int perm(int,int);
+int fact(int);
+int main()
+{
+    int a,b;
+    printf("Enter two  number:");
+    scanf("%d%d",&a,&b);
+    printf("The Combination is %d ",perm(a,b));
+    return 0;
+}
+int fact(int n)
+{
+    int i, f=1;
+    for(i=1; i<=n; i++)
+        f=f*i;
+    return f;
+}
+int perm(int n,int r)
+{
+    return fact(n)/fact(r);
+}
+
