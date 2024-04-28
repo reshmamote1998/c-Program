@@ -1,0 +1,204 @@
+                          Assignment - 18
+
+
+                  String and Functions in C Language
+
+
+
+
+1. Write a function to calculate length of the string
+#include<stdio.h>
+#include<string.h>
+void len(char[]);
+int main()
+{
+
+    char str[10]="Reshma";
+    len(str);
+}
+void len(char str[])
+{
+    int l;
+    l=strlen(str);
+    printf("Length of string is %d",l);
+}
+
+
+2. Write a function to reverse a string.
+
+  #include<stdio.h>
+#include<string.h>
+void reverse(char[]);
+int main()
+{
+    char str[100];
+    printf("\nEnter a string:");
+    fgets(str,100,stdin);
+    reverse(str);
+}
+void reverse(char str[])
+{
+  printf("\nstring in reverse order:%s\n",strrev(str));
+}
+
+
+3. Write a function to compare two strings.
+4. Write a function to transform string into uppercase
+
+ #include<stdio.h>
+#include<string.h>
+void uppercase(char []);
+int main()
+{
+    char str[100];
+    printf("\nEnter  a string:");
+    fgets(str,100,stdin);
+    uppercase(str);
+}
+void uppercase(char str[])
+{
+    printf("Given string in upper case=%s",strupr(str));
+}
+
+
+5. Write a function to transform a string into lowercase
+
+#include<stdio.h>
+#include<string.h>
+void lowerase(char []);
+int main()
+{
+    char str[100];
+    printf("\nEnter  a string:");
+    fgets(str,100,stdin);
+    lowercase(str);
+}
+void lowercase(char str[])
+{
+    printf("Given string in upper case=%s",strlwr(str));
+}
+
+
+6. Write a function to check whether a given string is an alphanumeric string or not. 
+(Alphanumeric string must contain at least one alphabet and one digit)
+
+  #include<stdio.h>
+int alphanumeric(char[]);
+int main()
+{
+    char str[20];
+    printf("Enter a string:");
+    fgets(str,20,stdin);
+   alphanumeric(str)?printf(" alphanumeric",str):printf(" not alphanumeric",str);
+}
+int alphanumeric(char str[])
+{
+    int i,A=0,D=0;
+    for(i=0;str[i];i++)
+    {
+       if(str[i]>='a'&&str[i]<='z'||str[i]>='A'&&str[i]<='Z') 
+          A=1;
+       if(str[i]>='0'&&str[i]<='9')
+          D=1;
+    }
+    if(A==1&&D==1)
+       return 1;
+    else
+       return 0;
+}
+
+
+7. Write a function to check whether a given string is palindrome or not.
+
+  #include<stdio.h>
+#include<string.h>
+int palindrome(char[]);
+int main()
+{
+    char str[20];
+    printf("Enter a string:");
+    fgets(str,20,stdin);
+    if(palindrome(str))
+       printf("Palindrome");
+    else
+       printf("Not palindrome");
+}
+int palindrome(char str[])
+{
+    int l,i;
+    l=strlen(str);
+    for(i=0;i<l/2;i++)
+    {
+        if(str[i]!=str[l-1-i])
+          return 0;
+8. Write a function to count words in a given string
+
+  #include<stdio.h>
+#include<string.h>
+int count_word(char[]);
+int main()
+{
+    char str[100];
+    printf("Enter a string:");
+    fgets(str,100,stdin);
+    printf("Total word in sentences=%d",count_word(str));
+}
+int count_word(char str[])
+{
+    int i,count=0;
+    for(i=0;str[i];i++)
+    {
+        if(str[i]==' '&& str[i+1]!=' ')
+          count++;
+    }
+    if(i>0)
+      count++;
+    return count;
+}
+
+9. Write a function to reverse a string word wise. (For example if the given string is 
+“Mysirg Education Services” then the resulting string should be “Services Education 
+Mysirg” )
+
+
+  #include<stdio.h>
+#include<string.h>
+void swap(char[],int,int);
+int main()
+{
+    char a[20]=" I am reshma";
+    int i=0,start=0,end=0,flag=0;
+    while(a[i]!='\0')
+    {
+        while(a[i]!=' ')
+        {
+            if(a[i]=='\0')
+            {
+               flag=1;
+               break;
+            }  
+            end++;
+            i++;
+        }
+        swap(a,start,end-1);
+        if(flag==1)
+            break;
+        start=end++;
+        i++;
+     }
+     swap(a,0,i-1);
+     printf("%s",a);
+     return 0;
+}
+void swap(char a[],int i,int j)
+{
+    char temp;
+    while(i<=j)
+    {
+        temp=a[i];
+        a[i]=a[j];
+        a[j]=temp;
+        i++;
+        j--;
+    }
+}
